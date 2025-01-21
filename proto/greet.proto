@@ -1,20 +1,42 @@
-syntax="proto3";
+syntax = "proto3";
 
 option go_package = "./proto";
 
 package greet_service;
 
-service GreetService{
-    rpc SayHello (NoParam) returns(HelloResponse);
+service GreetService {
+    // Unary RPC
+    rpc SayHello (NoParam) returns (HelloResponse);
 
-    rpc serverStreaming(NamesList) returns ( stream HelloResponse);
+    // Server-side streaming RPC
+    rpc ServerStreaming (NameList) returns (stream HelloResponse);
 
-    rpc clientStreaming(stream HelloREquest) returns (Message list)
+    // Client-side streaming RPC
+    rpc ClientStreaming (stream HelloRequest) returns (MessageList);
+
+    // Bi-directional streaming RPC
+    rpc BiDirectionalStreaming (stream HelloRequest) returns (stream HelloResponse);
 }
 
-message NoParam{};
+// Empty message for no parameter requests
+message NoParam {}
 
-message HelloResponse{
+// Request message for individual greetings
+message HelloRequest {
     string message = 1;
+}
 
+// Response message for individual greetings
+message HelloResponse {
+    string message = 1;
+}
+
+// List of names for server-side streaming
+message NameList {
+    repeated string names = 1;
+}
+
+// List of messages for client-side streaming responses
+message MessageList {
+    repeated string messages = 1;
 }
