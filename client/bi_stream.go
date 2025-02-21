@@ -45,5 +45,4 @@ func callHelloBiDirectionalStreaming(client pb.GreetServiceClient, names *pb.Nam
 	stream.CloseSend()
 	<-waitc
 	log.Printf("Bi-Directional streaming finished")
-
 }
