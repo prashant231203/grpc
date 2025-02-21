@@ -8,11 +8,11 @@ import (
 	pb "github.com/prashant231203/grpc/proto"
 )
 
-func callSayHelloServerStreaming(client pb.GreetServiceClient, names []string) {
+func callSayHelloServerStreaming(client pb.GreetServiceClient, names *pb.NameList) {
 	log.Println("Streaming started...")
 
 	// Correct method name: use ServerStreaming
-	stream, err := client.ServerStreaming(context.Background(), &pb.NameList{Names: names})
+	stream, err := client.ServerStreaming(context.Background(), names)
 	if err != nil {
 		log.Fatalf("could not send the request: %v", err)
 	}
