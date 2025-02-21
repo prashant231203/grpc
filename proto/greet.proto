@@ -16,6 +16,9 @@ service GreetService {
 
     // Bi-directional streaming RPC
     rpc BiDirectionalStreaming (stream HelloRequest) returns (stream HelloResponse);
+
+    // Add this RPC method definition
+    rpc SayHelloServerStreaming(NameList) returns (stream HelloResponse) {}
 }
 
 // Empty message for no parameter requests
