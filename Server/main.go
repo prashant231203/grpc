@@ -11,7 +11,7 @@ import (
 const PORT = ":5001" // Define your port here
 
 type helloServer struct {
-	pb.GreetServiceServer
+	pb.UnimplementedGreetServiceServer
 }
 
 func main() {

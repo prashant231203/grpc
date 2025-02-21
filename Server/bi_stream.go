@@ -7,7 +7,7 @@ import (
 	pb "github.com/prashant231203/grpc/proto"
 )
 
-func (s *helloServer) SayHelloBiDirectionalStreaming(stream pb.GreetService_BiDirectionalStreamingServer) error {
+func (s *helloServer) BiDirectionalStreaming(stream pb.GreetService_BiDirectionalStreamingServer) error {
 	for {
 		req, err := stream.Recv()
 		if err == io.EOF {
@@ -23,6 +23,5 @@ func (s *helloServer) SayHelloBiDirectionalStreaming(stream pb.GreetService_BiDi
 		if err := stream.Send(res); err != nil {
 			return err
 		}
-
 	}
 }

@@ -29,6 +29,6 @@ func main() {
 	// Assuming callSayHello is implemented elsewhere.
 	// callSayHello(client)
 	// callSayHelloServerStreaming(client, names)
-	callSayHelloClientStreaming(client, names)
-	// callHelloBiDirectionalStreaming(client, names)
+	// callSayHelloClientStreaming(client, names)
+	callHelloBiDirectionalStreaming(client, names)
 }
