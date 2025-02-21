@@ -8,7 +8,7 @@ import (
 	"google.golang.org/grpc"
 )
 
-const PORT = ":8080" // Define your port here
+const PORT = ":5001" // Define your port here
 
 type helloServer struct {
 	pb.GreetServiceServer

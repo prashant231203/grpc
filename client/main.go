@@ -10,7 +10,7 @@ import (
 )
 
 const (
-	PORT = ":8080"
+	PORT = ":5001"
 )
 
 func main() {
@@ -23,8 +23,9 @@ func main() {
 
 	client := pb.NewGreetServiceClient(conn)
 
-	// names := []string{"prashant", "alice", "Bob"}
+	names := []string{"prashant", "alice", "Bob"}
 
-	callSayHello(client)
+	// callSayHello(client)
+	callSayHelloServerStreaming(client, names)
 
 }
