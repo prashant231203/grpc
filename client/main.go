@@ -23,6 +23,8 @@ func main() {
 
 	client := pb.NewGreetServiceClient(conn)
 
+	// names := []string{"prashant", "alice", "Bob"}
+
 	callSayHello(client)
 
 }

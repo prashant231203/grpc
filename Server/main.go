@@ -11,7 +11,7 @@ import (
 const PORT = ":8080" // Define your port here
 
 type helloServer struct {
-	pb.UnimplementedGreetServiceServer
+	pb.GreetServiceServer
 }
 
 func main() {
